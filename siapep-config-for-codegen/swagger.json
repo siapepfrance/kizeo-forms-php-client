@@ -1,0 +1,2587 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a Swagger generated doc for Kizeo REST API 3. You can find additionnal documentation here : [Online documentation](\/doc).",
+    "version": "3.0.0",
+    "title": "Kizeo REST",
+    "termsOfService": "",
+    "contact": {
+      "email": "support@kizeo.com"
+    }
+  },
+  "host": "www.kizeoforms.com",
+  "basePath": "\/rest\/v3",
+  "tags": [
+    {
+      "name": "token",
+      "description": "Methods for managing API tokens",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "users",
+      "description": "Methods for managing users",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "forms",
+      "description": "Methods for managing forms",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "data",
+      "description": "Methods for managing data",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "exports",
+      "description": "Methods for managing exports",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "lists",
+      "description": "Methods for managing lists",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    },
+    {
+      "name": "groups",
+      "description": "Methods for managing groups",
+      "externalDocs": {
+        "description": "",
+        "url": "http:\/\/swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "\/token\/{token}": {
+      "delete": {
+        "tags": [
+          "token"
+        ],
+        "summary": "Revoke a token",
+        "description": "Use with caution",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "description": "Token to revoke",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesful deletion"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/token\/all": {
+      "delete": {
+        "tags": [
+          "token"
+        ],
+        "summary": "Revoke all token",
+        "description": "Use with caution",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesful deletion"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get all users",
+        "description": "This function provides you a list of all users in the account.",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of users",
+            "schema": {
+              "$ref": "#\/definitions\/User"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Create a new user",
+        "description": "Login, password, first_name, last_name, admin and form_user are required.",
+        "consumes": [
+          "application\/json"
+        ],
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User params",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User created",
+            "schema": {
+              "$ref": "#\/definitions\/DefaultResponse"
+            }
+          },
+          "400": {
+            "description": "Error"
+          },
+          "410": {
+            "description": "You have rights issues."
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/users\/{userId}": {
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Update a user",
+        "description": "Update an existing user",
+        "consumes": [
+          "application\/json"
+        ],
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of user to edit"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "User params",
+            "schema": {
+              "$ref": "#\/definitions\/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User updated",
+            "schema": {
+              "$ref": "#\/definitions\/DefaultResponse"
+            }
+          },
+          "400": {
+            "description": "Error"
+          },
+          "410": {
+            "description": "You have rights issues."
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Delete a user",
+        "description": "Delete an existing user",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of user to edit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted",
+            "schema": {
+              "$ref": "#\/definitions\/DefaultResponse"
+            }
+          },
+          "400": {
+            "description": "Error"
+          },
+          "410": {
+            "description": "You have rights issues."
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms": {
+      "get": {
+        "tags": [
+          "forms"
+        ],
+        "summary": "List all forms",
+        "description": "This function provides you a list of all forms in the account.",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of forms",
+            "schema": {
+              "$ref": "#\/definitions\/FormMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}": {
+      "get": {
+        "tags": [
+          "forms"
+        ],
+        "summary": "Get form definition",
+        "description": "This function provides you a complete form definition",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Form definition",
+            "schema": {
+              "$ref": "#\/definitions\/Form"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get the list of all data of a form (not read)",
+        "description": "This function provides you all data of a form (not read)",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of all unread data",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/all": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get the list of all data of a form",
+        "description": "This function provides you all data of a form",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of data",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/search": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get List of filtered data of a form",
+        "description": "Get the list of filtered data of a form, or of all forms if formId is set to 'all'",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data params",
+            "schema": {
+              "$ref": "#\/definitions\/SearchFilter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered data",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/advanced": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get List of filtered data of a form (with advanced filtering options)",
+        "description": "Get the list of filtered data of a form (with advanced filtering options), or of all forms if formId is set to 'all'",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data params",
+            "schema": {
+              "$ref": "#\/definitions\/AdvancedFilter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered data",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/readnew": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get content of unread data",
+        "description": "Get the content of all unread data",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unread data",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Get data of a form",
+        "description": "Get data of a form",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data",
+            "schema": {
+              "$ref": "#\/definitions\/Data"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/markasread": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Set list of data of a form to read",
+        "description": "Set list of data of a form to read",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data ids parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data marked as read",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/markasunread": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Set list of data of form to unread",
+        "description": "Set list of data of form to unread",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data ids parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data marked as unread",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/push": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Send push with data",
+        "description": "Send push with data",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataPush"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Push sent successfully",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/push/{dataId}": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Send push with data",
+        "description": "Send push with data",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data to edit"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Data parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataPush"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data updated successfully",
+            "schema": {
+              "$ref": "#\/definitions\/DataMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/push\/inbox": {
+      "get": {
+        "tags": [
+          "data"
+        ],
+        "summary": "Receive new pushed data",
+        "description": "Receive all new pushed data",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New pushed data received",
+            "schema": {
+              "$ref": "#\/definitions\/FormMin"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}\/pdf": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get PDF data of a form",
+        "description": "Get PDF data of a form",
+        "type": "stream",
+        "produces": [
+          "application\/pdf"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF created"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/exports": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get list of Word and Excel exports",
+        "description": "Get the complete list of Word et Excel exports",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of exports"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}\/exports\/{exportId}": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Export data",
+        "description": "Export one entry to the selected export.",
+        "produces": [
+          "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "application\/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          },
+          {
+            "in": "path",
+            "name": "exportId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of requested export model"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Export"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "501": {
+            "description": "Form\/Export\/Id is not matching"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}\/exports\/{exportId}\/pdf": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Export data (PDF)",
+        "description": "Export one entry to the selected export to PDF.",
+        "produces": [
+          "application\/pdf"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          },
+          {
+            "in": "path",
+            "name": "exportId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of requested export model"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF created"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "501": {
+            "description": "Form\/Export\/Id is not matching"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/multiple_data\/exports\/{exportId}\/pdf": {
+      "post": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Export data (multiple \/ PDF)",
+        "description": "Export multiple entries to the selected export to PDF.",
+        "produces": [
+          "application\/pdf",
+          "application\/zip"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "exportId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of requested export model"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data ids Parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF created"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "501": {
+            "description": "Form\/Export\/Id is not matching"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/multiple\/csv": {
+      "post": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get CSV data (multiple) of a form",
+        "description": "Get CSV data (multiple) of a form",
+        "type": "stream",
+        "produces": [
+          "text\/csv"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data ids Parameters",
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CSV data exported"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/multiple\/csv_custom": {
+      "post": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get custom CSV data (multiple) of a form",
+        "description": "Get custom CSV data (multiple) of a form",
+        "type": "stream",
+        "produces": [
+          "text\/csv"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data ids Parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "CSV data exported"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/multiple\/excel": {
+      "post": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get Excel list data (multiple) of a form",
+        "description": "Get Excel list data (multiple) of a form",
+        "type": "stream",
+        "produces": [
+          "application\/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data ids Parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Excel list data created"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/multiple\/excel_custom": {
+      "post": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get custom Excel list data (multiple) of a form",
+        "description": "Get custom Excel list data (multiple) of a form",
+        "type": "stream",
+        "produces": [
+          "application\/vnd.ms-excel"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data ids Parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/DataIds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Custom excel list data created"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}\/medias\/{mediaName}": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get one image of a form",
+        "description": "Get one image of a form",
+        "type": "stream",
+        "produces": [
+          "image\/jpeg",
+          "image\/png",
+          "image\/gif"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          },
+          {
+            "in": "path",
+            "name": "mediaName",
+            "required": true,
+            "type": "string",
+            "description": "Name of the image"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Image retrieved"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/forms\/{formId}\/data\/{dataId}\/form_pictures\/{mediaName}": {
+      "get": {
+        "tags": [
+          "exports"
+        ],
+        "summary": "Get one fixed image of a form",
+        "description": "Get one fixed image of a form",
+        "type": "stream",
+        "produces": [
+          "image\/jpeg",
+          "image\/png",
+          "image\/gif"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "formId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the form"
+          },
+          {
+            "in": "path",
+            "name": "dataId",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the data"
+          },
+          {
+            "in": "path",
+            "name": "mediaName",
+            "required": true,
+            "type": "string",
+            "description": "Name of the image"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fixed image retrieved"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/lists": {
+      "get": {
+        "tags": [
+          "lists"
+        ],
+        "summary": "Get External Lists",
+        "description": "Get External Lists",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists",
+            "schema": {
+              "$ref": "#\/definitions\/ExtList"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/lists\/{listId}": {
+      "get": {
+        "tags": [
+          "lists"
+        ],
+        "summary": "Get External List Definition",
+        "description": "Get External List Definition",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "listId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the list"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List definition",
+            "schema": {
+              "$ref": "#\/definitions\/ExtListDetail"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "lists"
+        ],
+        "summary": "Update External List Definition",
+        "description": "Update External List Definition",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "listId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the list"
+          },
+          {
+            "in": "body",
+            "name": "listId",
+            "description": "User Parameters",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/ListPut"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List definition updated"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/lists\/{listId}\/complete": {
+      "get": {
+        "tags": [
+          "lists"
+        ],
+        "summary": "Get External List Definition (Without taking in account filters)",
+        "description": "Get External List Definition",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "listId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the list"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Complete list definition",
+            "schema": {
+              "$ref": "#\/definitions\/ExtListDetail"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/groups": {
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Get all groups",
+        "description": "Get Groups Information",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of groups"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group": {
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Create a new group",
+        "description": "Use to a create group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Group Parameters",
+            "schema": {
+              "$ref": "#\/definitions\/Group"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group created",
+            "schema": {
+              "$ref": "#\/definitions\/GroupResponse"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group\/{groupId}": {
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Get a group",
+        "description": "Get all informations about the group",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group",
+            "schema": {
+              "$ref": "#\/definitions\/GroupComplete"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Update a group",
+        "description": "Update existing group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Group Parameters",
+            "schema": {
+              "$ref": "#\/definitions\/GroupModify"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group updated"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Delete a group",
+        "description": "Delete existing group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group deleted"
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group\/{groupId}\/users": {
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Get all users of a specific group",
+        "description": "Use to get all users of the requested group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of group users",
+            "schema": {
+              "$ref": "#\/definitions\/GroupUser"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Add several users into a group",
+        "description": "Use to add several users into a group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Users ids",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/UserResponse"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Users added",
+            "schema": {
+              "$ref": "#\/definitions\/GroupResponse"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group\/{groupId}\/leaders": {
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Get all groups' leaders of a specific group",
+        "description": "Use to get all groups' leaders of a specific group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of group leaders",
+            "schema": {
+              "$ref": "#\/definitions\/GroupUser"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Add several leaders into a group",
+        "description": "Use to add several leaders into a group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Leaders ids",
+            "required": true,
+            "schema": {
+              "$ref": "#\/definitions\/UserResponse"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Leaders added",
+            "schema": {
+              "$ref": "#\/definitions\/User"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/groups\/ordered": {
+      "get": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Get all groups ordered",
+        "description": "Use to get all groups ordered",
+        "produces": [
+          "application\/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of groups ordered",
+            "schema": {
+              "$ref": "#\/definitions\/Group"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group\/{groupId}\/user\/{userId}": {
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Add an user into a specific group",
+        "description": "Add an user into a group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User added",
+            "schema": {
+              "$ref": "#\/definitions\/GroupComplete"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Remove an user from a specific group",
+        "description": "Remove an user from a specific group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted",
+            "schema": {
+              "$ref": "#\/definitions\/GroupComplete"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "\/group\/{groupId}\/leader\/{leaderId}": {
+      "post": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Add a leader into a specific group",
+        "description": "Add a leader into a specific group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "path",
+            "name": "leaderId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the leader"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Leader added",
+            "schema": {
+              "$ref": "#\/definitions\/GroupComplete"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "groups"
+        ],
+        "summary": "Remove a leader from a specific group",
+        "description": "Remove a leader from a specific group",
+        "produces": [
+          "application\/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the group"
+          },
+          {
+            "in": "path",
+            "name": "leaderId",
+            "required": true,
+            "type": "integer",
+            "description": "Id of the leader"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Leader deleted",
+            "schema": {
+              "$ref": "#\/definitions\/GroupComplete"
+            }
+          },
+          "400": {
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "authentication": [
+
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "authentication": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "DefaultResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    },
+    "User": {
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "admin": {
+          "type": "boolean",
+          "description": "is admin ?"
+        },
+        "form_user": {
+          "type": "boolean",
+          "description": "is user ?"
+        },
+        "allow_form_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Form Designer Menu"
+        },
+        "allow_externallist_menu": {
+          "type": "boolean",
+          "description": "Allow user to access External List Menu"
+        },
+        "allow_user_menu": {
+          "type": "boolean",
+          "description": "Allow user to access User Menu"
+        },
+        "allow_application_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Application Menu"
+        },
+        "allow_export_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Export Menu"
+        },
+        "allow_data_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Data Menu"
+        },
+        "allow_account_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Account Menu"
+        }
+      }
+    },
+    "GroupUser": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "admin": {
+          "type": "boolean",
+          "description": "is admin ?"
+        },
+        "form_user": {
+          "type": "boolean",
+          "description": "is user ?"
+        },
+        "allow_form_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Form Designer Menu"
+        },
+        "allow_externallist_menu": {
+          "type": "boolean",
+          "description": "Allow user to access External List Menu"
+        },
+        "allow_user_menu": {
+          "type": "boolean",
+          "description": "Allow user to access User Menu"
+        },
+        "allow_application_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Application Menu"
+        },
+        "allow_export_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Export Menu"
+        },
+        "allow_data_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Data Menu"
+        },
+        "allow_account_menu": {
+          "type": "boolean",
+          "description": "Allow user to access Account Menu"
+        }
+      }
+    },
+    "UserResponse": {
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "id": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "FormMin": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Form": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "DataMin": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "form_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "create_time": {
+          "type": "string"
+        },
+        "answer_time": {
+          "type": "string"
+        }
+      }
+    },
+    "SearchFilter": {
+      "properties": {
+        "textFilter": {
+          "type": "string",
+          "required": false
+        }
+      }
+    },
+    "AdvancedFilter": {
+      "properties": {
+        "global_filters": {
+          "type": "string",
+          "required": false
+        },
+        "filters": {
+          "items": {
+            "$ref": "#\/definitions\/AdvancedFilterFilters"
+          },
+          "type": "array"
+        },
+        "order": {
+          "items": {
+            "$ref": "#\/definitions\/AdvancedFilterOrders"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "AdvancedFilterFilters": {
+      "properties": {
+        "field": {
+          "type": "string",
+          "required": true
+        },
+        "operator": {
+          "type": "string",
+          "required": true
+        },
+        "type": {
+          "type": "string",
+          "required": true
+        },
+        "val": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "AdvancedFilterOrders": {
+      "properties": {
+        "col": {
+          "type": "string",
+          "required": true
+        },
+        "type": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "Data": {
+      "properties": {
+        "Data": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "form_id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "create_time": {
+              "type": "string"
+            },
+            "answer_time": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#\/definitions\/FieldValue"
+              }
+            }
+          }
+        }
+      }
+    },
+    "FieldValue": {
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "subtype": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "string"
+        }
+      }
+    },
+    "DataIds": {
+      "properties": {
+        "data_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "DataPush": {
+      "properties": {
+        "recipient_user_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "fields": {
+          "$ref": "#\/definitions\/FieldPush"
+        }
+      }
+    },
+    "FieldPush": {
+      "properties": {
+        "field_id": {
+          "$ref": "#\/definitions\/FieldPushValue"
+        }
+      }
+    },
+    "FieldPushValue": {
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "ExtList": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ExtListDetail": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ListPut": {
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Group": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "parent_group_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "GroupResponse": {
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GroupModify": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parent_group_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "GroupComplete": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parent_group_id": {
+          "type": "integer"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "leaders": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http:\/\/swagger.io"
+  }
+}
