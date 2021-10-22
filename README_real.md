@@ -323,7 +323,6 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**listsListIdCompleteGet**](docs/Api/ListsApi.md#listslistidcompleteget) | **GET** /lists/{listId}/complete | Get External List Definition (Without taking in account filters)
 *ListsApi* | [**listsListIdGet**](docs/Api/ListsApi.md#listslistidget) | **GET** /lists/{listId} | Get External List Definition
 *ListsApi* | [**listsListIdPut**](docs/Api/ListsApi.md#listslistidput) | **PUT** /lists/{listId} | Update External List Definition
-*TokenApi* | [**loginPost**](docs/Api/TokenApi.md#loginpost) | **POST** /login | Login to Kizeo Forms
 *TokenApi* | [**tokenAllDelete**](docs/Api/TokenApi.md#tokenalldelete) | **DELETE** /token/all | Revoke all token
 *TokenApi* | [**tokenTokenDelete**](docs/Api/TokenApi.md#tokentokendelete) | **DELETE** /token/{token} | Revoke a token
 *UsersApi* | [**usersGet**](docs/Api/UsersApi.md#usersget) | **GET** /users | Get all users
@@ -342,7 +341,6 @@ Class | Method | HTTP request | Description
  - [DataMin](docs/Model/DataMin.md)
  - [DataPush](docs/Model/DataPush.md)
  - [DefaultResponse](docs/Model/DefaultResponse.md)
- - [Export](docs/Model/Export.md)
  - [ExtList](docs/Model/ExtList.md)
  - [ExtListDetail](docs/Model/ExtListDetail.md)
  - [FieldPush](docs/Model/FieldPush.md)
@@ -356,8 +354,6 @@ Class | Method | HTTP request | Description
  - [GroupResponse](docs/Model/GroupResponse.md)
  - [GroupUser](docs/Model/GroupUser.md)
  - [ListPut](docs/Model/ListPut.md)
- - [LoginCredential](docs/Model/LoginCredential.md)
- - [LoginCredentialResponse](docs/Model/LoginCredentialResponse.md)
  - [SearchFilter](docs/Model/SearchFilter.md)
  - [User](docs/Model/User.md)
  - [UserResponse](docs/Model/UserResponse.md)

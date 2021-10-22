@@ -1,6 +1,6 @@
 <?php
 /**
- * Data
+ * LoginCredential
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \SiapepFrance\KizeoForms\ObjectSerializer;
 
 /**
- * Data Class Doc Comment
+ * LoginCredential Class Doc Comment
  *
  * @category Class
  * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Data implements ModelInterface, ArrayAccess
+class LoginCredential implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Data implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Data';
+    protected static $swaggerModelName = 'LoginCredential';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class Data implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => 'object'    ];
+        'user' => 'string',
+'password' => 'string',
+'company' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +66,9 @@ class Data implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'user' => null,
+'password' => null,
+'company' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +97,9 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'user' => 'user',
+'password' => 'password',
+'company' => 'company'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +107,9 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'user' => 'setUser',
+'password' => 'setPassword',
+'company' => 'setCompany'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +117,9 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'user' => 'getUser',
+'password' => 'getPassword',
+'company' => 'getCompany'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +179,9 @@ class Data implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
     }
 
     /**
@@ -197,25 +209,73 @@ class Data implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets user
      *
-     * @return object
+     * @return string
      */
-    public function getData()
+    public function getUser()
     {
-        return $this->container['data'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets data
+     * Sets user
      *
-     * @param object $data data
+     * @param string $user user
      *
      * @return $this
      */
-    public function setData($data)
+    public function setUser($user)
     {
-        $this->container['data'] = $data;
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     * @param string $password password
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets company
+     *
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->container['company'];
+    }
+
+    /**
+     * Sets company
+     *
+     * @param string $company company
+     *
+     * @return $this
+     */
+    public function setCompany($company)
+    {
+        $this->container['company'] = $company;
 
         return $this;
     }

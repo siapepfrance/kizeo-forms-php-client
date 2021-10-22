@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace SiapepFranceKizeoForms;
+namespace SiapepFrance\KizeoForms;
 
 /**
  * SearchFilterTest Class Doc Comment
  *
  * @category    Class
  * @description SearchFilter
- * @package     SiapepFranceKizeoForms
+ * @package     SiapepFrance\KizeoForms
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -76,7 +76,7 @@ class SearchFilterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "text_filter"
+     * Test attribute "textFilter"
      */
     public function testPropertyTextFilter()
     {

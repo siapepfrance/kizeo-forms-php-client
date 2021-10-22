@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace SiapepFranceKizeoForms;
+namespace SiapepFrance\KizeoForms;
 
 /**
  * DataMinTest Class Doc Comment
  *
  * @category    Class
  * @description DataMin
- * @package     SiapepFranceKizeoForms
+ * @package     SiapepFrance\KizeoForms
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,28 +83,28 @@ class DataMinTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "form_id"
+     * Test attribute "formId"
      */
     public function testPropertyFormId()
     {
     }
 
     /**
-     * Test attribute "user_id"
+     * Test attribute "userId"
      */
     public function testPropertyUserId()
     {
     }
 
     /**
-     * Test attribute "create_time"
+     * Test attribute "createTime"
      */
     public function testPropertyCreateTime()
     {
     }
 
     /**
-     * Test attribute "answer_time"
+     * Test attribute "answerTime"
      */
     public function testPropertyAnswerTime()
     {

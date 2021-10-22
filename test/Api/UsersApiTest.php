@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,17 +25,17 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace SiapepFranceKizeoForms;
+namespace SiapepFrance\KizeoForms;
 
-use SiapepFranceKizeoForms\Configuration;
-use SiapepFranceKizeoForms\ApiException;
-use SiapepFranceKizeoForms\ObjectSerializer;
+use SiapepFrance\KizeoForms\Configuration;
+use SiapepFrance\KizeoForms\ApiException;
+use SiapepFrance\KizeoForms\ObjectSerializer;
 
 /**
  * UsersApiTest Class Doc Comment
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

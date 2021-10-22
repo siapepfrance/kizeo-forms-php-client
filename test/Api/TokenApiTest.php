@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,17 +25,17 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace SiapepFranceKizeoForms;
+namespace SiapepFrance\KizeoForms;
 
-use SiapepFranceKizeoForms\Configuration;
-use SiapepFranceKizeoForms\ApiException;
-use SiapepFranceKizeoForms\ObjectSerializer;
+use SiapepFrance\KizeoForms\Configuration;
+use SiapepFrance\KizeoForms\ApiException;
+use SiapepFrance\KizeoForms\ObjectSerializer;
 
 /**
  * TokenApiTest Class Doc Comment
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -67,6 +67,16 @@ class TokenApiTest extends \PHPUnit_Framework_TestCase
      * Clean up after running all test cases
      */
     public static function tearDownAfterClass()
+    {
+    }
+
+    /**
+     * Test case for loginPost
+     *
+     * Login to Kizeo Forms.
+     *
+     */
+    public function testLoginPost()
     {
     }
 

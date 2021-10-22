@@ -1,6 +1,6 @@
 <?php
 /**
- * Data
+ * Export
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \SiapepFrance\KizeoForms\ObjectSerializer;
 
 /**
- * Data Class Doc Comment
+ * Export Class Doc Comment
  *
  * @category Class
  * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Data implements ModelInterface, ArrayAccess
+class Export implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Data implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Data';
+    protected static $swaggerModelName = 'Export';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,14 @@ class Data implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => 'object'    ];
+        'formId' => 'string',
+'name' => 'string',
+'type' => 'string',
+'json' => 'object',
+'isDefault' => 'bool',
+'deleted' => 'bool',
+'computedNames' => 'object',
+'id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +71,14 @@ class Data implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'formId' => null,
+'name' => null,
+'type' => null,
+'json' => null,
+'isDefault' => null,
+'deleted' => null,
+'computedNames' => null,
+'id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +107,14 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'formId' => 'form_id',
+'name' => 'name',
+'type' => 'type',
+'json' => 'json',
+'isDefault' => 'is_default',
+'deleted' => 'deleted',
+'computedNames' => 'computedNames',
+'id' => 'id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +122,14 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'formId' => 'setFormId',
+'name' => 'setName',
+'type' => 'setType',
+'json' => 'setJson',
+'isDefault' => 'setIsDefault',
+'deleted' => 'setDeleted',
+'computedNames' => 'setComputedNames',
+'id' => 'setId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +137,14 @@ class Data implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'formId' => 'getFormId',
+'name' => 'getName',
+'type' => 'getType',
+'json' => 'getJson',
+'isDefault' => 'getIsDefault',
+'deleted' => 'getDeleted',
+'computedNames' => 'getComputedNames',
+'id' => 'getId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +204,14 @@ class Data implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['formId'] = isset($data['formId']) ? $data['formId'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['json'] = isset($data['json']) ? $data['json'] : null;
+        $this->container['isDefault'] = isset($data['isDefault']) ? $data['isDefault'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['computedNames'] = isset($data['computedNames']) ? $data['computedNames'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -197,25 +239,193 @@ class Data implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets formId
      *
-     * @return object
+     * @return string
      */
-    public function getData()
+    public function getFormId()
     {
-        return $this->container['data'];
+        return $this->container['formId'];
     }
 
     /**
-     * Sets data
+     * Sets formId
      *
-     * @param object $data data
+     * @param string $formId formId
      *
      * @return $this
      */
-    public function setData($data)
+    public function setFormId($formId)
     {
-        $this->container['data'] = $data;
+        $this->container['formId'] = $formId;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets json
+     *
+     * @return object
+     */
+    public function getJson()
+    {
+        return $this->container['json'];
+    }
+
+    /**
+     * Sets json
+     *
+     * @param object $json json
+     *
+     * @return $this
+     */
+    public function setJson($json)
+    {
+        $this->container['json'] = $json;
+
+        return $this;
+    }
+
+    /**
+     * Gets isDefault
+     *
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['isDefault'];
+    }
+
+    /**
+     * Sets isDefault
+     *
+     * @param bool $isDefault isDefault
+     *
+     * @return $this
+     */
+    public function setIsDefault($isDefault)
+    {
+        $this->container['isDefault'] = $isDefault;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted deleted
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets computedNames
+     *
+     * @return object
+     */
+    public function getComputedNames()
+    {
+        return $this->container['computedNames'];
+    }
+
+    /**
+     * Sets computedNames
+     *
+     * @param object $computedNames computedNames
+     *
+     * @return $this
+     */
+    public function setComputedNames($computedNames)
+    {
+        $this->container['computedNames'] = $computedNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

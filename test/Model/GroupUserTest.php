@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  SiapepFranceKizeoForms
+ * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace SiapepFranceKizeoForms;
+namespace SiapepFrance\KizeoForms;
 
 /**
  * GroupUserTest Class Doc Comment
  *
  * @category    Class
  * @description GroupUser
- * @package     SiapepFranceKizeoForms
+ * @package     SiapepFrance\KizeoForms
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -97,14 +97,14 @@ class GroupUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "firstName"
      */
     public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
@@ -132,56 +132,56 @@ class GroupUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "form_user"
+     * Test attribute "formUser"
      */
     public function testPropertyFormUser()
     {
     }
 
     /**
-     * Test attribute "allow_form_menu"
+     * Test attribute "allowFormMenu"
      */
     public function testPropertyAllowFormMenu()
     {
     }
 
     /**
-     * Test attribute "allow_externallist_menu"
+     * Test attribute "allowExternallistMenu"
      */
     public function testPropertyAllowExternallistMenu()
     {
     }
 
     /**
-     * Test attribute "allow_user_menu"
+     * Test attribute "allowUserMenu"
      */
     public function testPropertyAllowUserMenu()
     {
     }
 
     /**
-     * Test attribute "allow_application_menu"
+     * Test attribute "allowApplicationMenu"
      */
     public function testPropertyAllowApplicationMenu()
     {
     }
 
     /**
-     * Test attribute "allow_export_menu"
+     * Test attribute "allowExportMenu"
      */
     public function testPropertyAllowExportMenu()
     {
     }
 
     /**
-     * Test attribute "allow_data_menu"
+     * Test attribute "allowDataMenu"
      */
     public function testPropertyAllowDataMenu()
     {
     }
 
     /**
-     * Test attribute "allow_account_menu"
+     * Test attribute "allowAccountMenu"
      */
     public function testPropertyAllowAccountMenu()
     {

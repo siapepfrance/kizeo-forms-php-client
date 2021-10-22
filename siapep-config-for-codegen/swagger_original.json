@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is a Swagger generated doc for Kizeo REST API 3. You can find additionnal documentation here : [Online documentation](/doc).",
+    "description": "This is a Swagger generated doc for Kizeo REST API 3. You can find additionnal documentation here : [Online documentation](\/doc).",
     "version": "3.0.0",
     "title": "Kizeo REST",
     "termsOfService": "",
@@ -10,14 +10,14 @@
     }
   },
   "host": "www.kizeoforms.com",
-  "basePath": "/rest/v3",
+  "basePath": "\/rest\/v3",
   "tags": [
     {
       "name": "token",
       "description": "Methods for managing API tokens",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -25,7 +25,7 @@
       "description": "Methods for managing users",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -33,7 +33,7 @@
       "description": "Methods for managing forms",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -41,7 +41,7 @@
       "description": "Methods for managing data",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -49,7 +49,7 @@
       "description": "Methods for managing exports",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -57,7 +57,7 @@
       "description": "Methods for managing lists",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     },
     {
@@ -65,7 +65,7 @@
       "description": "Methods for managing groups",
       "externalDocs": {
         "description": "",
-        "url": "http://swagger.io"
+        "url": "http:\/\/swagger.io"
       }
     }
   ],
@@ -73,54 +73,7 @@
     "https"
   ],
   "paths": {
-    "/login": {
-      "post": {
-        "tags": [
-          "token"
-        ],
-        "summary": "Login to Kizeo Forms",
-        "description": "Login, password and company are required.",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "LoginCredential params",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/LoginCredential"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Logged in successfully",
-            "schema": {
-              "$ref": "#/definitions/LoginCredentialResponse"
-            }
-          },
-          "400": {
-            "description": "Error"
-          },
-          "401": {
-            "description": "You have rights issues."
-          }
-        },
-        "security": [
-          {
-            "authentication": [
-
-            ]
-          }
-        ]
-      }
-    },
-    "/token/{token}": {
+    "\/token\/{token}": {
       "delete": {
         "tags": [
           "token"
@@ -128,7 +81,7 @@
         "summary": "Revoke a token",
         "description": "Use with caution",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -156,7 +109,7 @@
         ]
       }
     },
-    "/token/all": {
+    "\/token\/all": {
       "delete": {
         "tags": [
           "token"
@@ -164,7 +117,7 @@
         "summary": "Revoke all token",
         "description": "Use with caution",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
@@ -183,7 +136,7 @@
         ]
       }
     },
-    "/users": {
+    "\/users": {
       "get": {
         "tags": [
           "users"
@@ -191,13 +144,13 @@
         "summary": "Get all users",
         "description": "This function provides you a list of all users in the account.",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
             "description": "List of users",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#\/definitions\/User"
             }
           },
           "400": {
@@ -219,10 +172,10 @@
         "summary": "Create a new user",
         "description": "Login, password, first_name, last_name, admin and form_user are required.",
         "consumes": [
-          "application/json"
+          "application\/json"
         ],
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -231,7 +184,7 @@
             "description": "User params",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#\/definitions\/User"
             }
           }
         ],
@@ -239,13 +192,13 @@
           "200": {
             "description": "User created",
             "schema": {
-              "$ref": "#/definitions/DefaultResponse"
+              "$ref": "#\/definitions\/DefaultResponse"
             }
           },
           "400": {
             "description": "Error"
           },
-          "401": {
+          "410": {
             "description": "You have rights issues."
           }
         },
@@ -258,7 +211,7 @@
         ]
       }
     },
-    "/users/{userId}": {
+    "\/users\/{userId}": {
       "put": {
         "tags": [
           "users"
@@ -266,10 +219,10 @@
         "summary": "Update a user",
         "description": "Update an existing user",
         "consumes": [
-          "application/json"
+          "application\/json"
         ],
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -285,7 +238,7 @@
             "required": true,
             "description": "User params",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#\/definitions\/User"
             }
           }
         ],
@@ -293,13 +246,13 @@
           "200": {
             "description": "User updated",
             "schema": {
-              "$ref": "#/definitions/DefaultResponse"
+              "$ref": "#\/definitions\/DefaultResponse"
             }
           },
           "400": {
             "description": "Error"
           },
-          "401": {
+          "410": {
             "description": "You have rights issues."
           }
         },
@@ -318,7 +271,7 @@
         "summary": "Delete a user",
         "description": "Delete an existing user",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -333,13 +286,13 @@
           "200": {
             "description": "User deleted",
             "schema": {
-              "$ref": "#/definitions/DefaultResponse"
+              "$ref": "#\/definitions\/DefaultResponse"
             }
           },
           "400": {
             "description": "Error"
           },
-          "401": {
+          "410": {
             "description": "You have rights issues."
           }
         },
@@ -352,7 +305,7 @@
         ]
       }
     },
-    "/forms": {
+    "\/forms": {
       "get": {
         "tags": [
           "forms"
@@ -360,13 +313,13 @@
         "summary": "List all forms",
         "description": "This function provides you a list of all forms in the account.",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
             "description": "List of forms",
             "schema": {
-              "$ref": "#/definitions/FormMin"
+              "$ref": "#\/definitions\/FormMin"
             }
           },
           "400": {
@@ -382,7 +335,7 @@
         ]
       }
     },
-    "/forms/{formId}": {
+    "\/forms\/{formId}": {
       "get": {
         "tags": [
           "forms"
@@ -390,7 +343,7 @@
         "summary": "Get form definition",
         "description": "This function provides you a complete form definition",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -405,7 +358,7 @@
           "200": {
             "description": "Form definition",
             "schema": {
-              "$ref": "#/definitions/Form"
+              "$ref": "#\/definitions\/Form"
             }
           },
           "400": {
@@ -421,7 +374,7 @@
         ]
       }
     },
-    "/forms/{formId}/data": {
+    "\/forms\/{formId}\/data": {
       "get": {
         "tags": [
           "data"
@@ -429,7 +382,7 @@
         "summary": "Get the list of all data of a form (not read)",
         "description": "This function provides you all data of a form (not read)",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -444,14 +397,7 @@
           "200": {
             "description": "List of all unread data",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -467,7 +413,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/all": {
+    "\/forms\/{formId}\/data\/all": {
       "get": {
         "tags": [
           "data"
@@ -475,7 +421,7 @@
         "summary": "Get the list of all data of a form",
         "description": "This function provides you all data of a form",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -490,14 +436,7 @@
           "200": {
             "description": "List of data",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -513,7 +452,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/search": {
+    "\/forms\/{formId}\/data\/search": {
       "post": {
         "tags": [
           "data"
@@ -521,7 +460,7 @@
         "summary": "Get List of filtered data of a form",
         "description": "Get the list of filtered data of a form, or of all forms if formId is set to 'all'",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -537,7 +476,7 @@
             "required": true,
             "description": "Data params",
             "schema": {
-              "$ref": "#/definitions/SearchFilter"
+              "$ref": "#\/definitions\/SearchFilter"
             }
           }
         ],
@@ -545,14 +484,7 @@
           "200": {
             "description": "Filtered data",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -568,7 +500,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/advanced": {
+    "\/forms\/{formId}\/data\/advanced": {
       "post": {
         "tags": [
           "data"
@@ -576,7 +508,7 @@
         "summary": "Get List of filtered data of a form (with advanced filtering options)",
         "description": "Get the list of filtered data of a form (with advanced filtering options), or of all forms if formId is set to 'all'",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -592,7 +524,7 @@
             "required": true,
             "description": "Data params",
             "schema": {
-              "$ref": "#/definitions/AdvancedFilter"
+              "$ref": "#\/definitions\/AdvancedFilter"
             }
           }
         ],
@@ -600,14 +532,7 @@
           "200": {
             "description": "Filtered data",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -623,7 +548,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/readnew": {
+    "\/forms\/{formId}\/data\/readnew": {
       "get": {
         "tags": [
           "data"
@@ -631,7 +556,7 @@
         "summary": "Get content of unread data",
         "description": "Get the content of all unread data",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -646,14 +571,7 @@
           "200": {
             "description": "Unread data",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -669,7 +587,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}": {
+    "\/forms\/{formId}\/data\/{dataId}": {
       "get": {
         "tags": [
           "data"
@@ -677,7 +595,7 @@
         "summary": "Get data of a form",
         "description": "Get data of a form",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -699,7 +617,7 @@
           "200": {
             "description": "Data",
             "schema": {
-              "$ref": "#/definitions/Data"
+              "$ref": "#\/definitions\/Data"
             }
           },
           "400": {
@@ -715,7 +633,7 @@
         ]
       }
     },
-    "/forms/{formId}/markasread": {
+    "\/forms\/{formId}\/markasread": {
       "post": {
         "tags": [
           "data"
@@ -723,7 +641,7 @@
         "summary": "Set list of data of a form to read",
         "description": "Set list of data of a form to read",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -739,7 +657,7 @@
             "required": true,
             "description": "Data ids parameters",
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -747,14 +665,7 @@
           "200": {
             "description": "Data marked as read",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -770,7 +681,7 @@
         ]
       }
     },
-    "/forms/{formId}/markasunread": {
+    "\/forms\/{formId}\/markasunread": {
       "post": {
         "tags": [
           "data"
@@ -778,7 +689,7 @@
         "summary": "Set list of data of form to unread",
         "description": "Set list of data of form to unread",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -794,7 +705,7 @@
             "required": true,
             "description": "Data ids parameters",
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -802,14 +713,7 @@
           "200": {
             "description": "Data marked as unread",
             "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/DataMin"
-                  }
-                }
-              }
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -825,7 +729,7 @@
         ]
       }
     },
-    "/forms/{formId}/push": {
+    "\/forms\/{formId}\/push": {
       "post": {
         "tags": [
           "data"
@@ -833,7 +737,7 @@
         "summary": "Send push with data",
         "description": "Send push with data",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -849,7 +753,7 @@
             "required": true,
             "description": "Data parameters",
             "schema": {
-              "$ref": "#/definitions/DataPush"
+              "$ref": "#\/definitions\/DataPush"
             }
           }
         ],
@@ -857,7 +761,7 @@
           "200": {
             "description": "Push sent successfully",
             "schema": {
-              "$ref": "#/definitions/DataMin"
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -873,7 +777,7 @@
         ]
       }
     },
-    "/forms/{formId}/push/{dataId}": {
+    "\/forms\/{formId}\/push/{dataId}": {
       "post": {
         "tags": [
           "data"
@@ -881,7 +785,7 @@
         "summary": "Send push with data",
         "description": "Send push with data",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -904,7 +808,7 @@
             "required": true,
             "description": "Data parameters",
             "schema": {
-              "$ref": "#/definitions/DataPush"
+              "$ref": "#\/definitions\/DataPush"
             }
           }
         ],
@@ -912,7 +816,7 @@
           "200": {
             "description": "Data updated successfully",
             "schema": {
-              "$ref": "#/definitions/DataMin"
+              "$ref": "#\/definitions\/DataMin"
             }
           },
           "400": {
@@ -928,7 +832,7 @@
         ]
       }
     },
-    "/forms/push/inbox": {
+    "\/forms\/push\/inbox": {
       "get": {
         "tags": [
           "data"
@@ -936,13 +840,13 @@
         "summary": "Receive new pushed data",
         "description": "Receive all new pushed data",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
             "description": "New pushed data received",
             "schema": {
-              "$ref": "#/definitions/FormMin"
+              "$ref": "#\/definitions\/FormMin"
             }
           },
           "400": {
@@ -958,7 +862,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}/pdf": {
+    "\/forms\/{formId}\/data\/{dataId}\/pdf": {
       "get": {
         "tags": [
           "exports"
@@ -967,7 +871,7 @@
         "description": "Get PDF data of a form",
         "type": "stream",
         "produces": [
-          "application/pdf"
+          "application\/pdf"
         ],
         "parameters": [
           {
@@ -1002,7 +906,7 @@
         ]
       }
     },
-    "/forms/{formId}/exports": {
+    "\/forms\/{formId}\/exports": {
       "get": {
         "tags": [
           "exports"
@@ -1010,7 +914,7 @@
         "summary": "Get list of Word and Excel exports",
         "description": "Get the complete list of Word et Excel exports",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1023,17 +927,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List of exports",
-            "schema": {
-              "properties": {
-                "data" : {
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/definitions/Export"
-                  }
-                }
-              }
-            }
+            "description": "List of exports"
           },
           "400": {
             "description": "Error"
@@ -1048,7 +942,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}/exports/{exportId}": {
+    "\/forms\/{formId}\/data\/{dataId}\/exports\/{exportId}": {
       "get": {
         "tags": [
           "exports"
@@ -1056,8 +950,8 @@
         "summary": "Export data",
         "description": "Export one entry to the selected export.",
         "produces": [
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          "application/vnd.ms-excel"
+          "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "application\/vnd.ms-excel"
         ],
         "parameters": [
           {
@@ -1084,16 +978,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Export",
-            "schema": {
-              "type": "string"
-            }
+            "description": "Export"
           },
           "400": {
             "description": "Error"
           },
           "501": {
-            "description": "Form/Export/Id is not matching"
+            "description": "Form\/Export\/Id is not matching"
           }
         },
         "security": [
@@ -1105,7 +996,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}/exports/{exportId}/pdf": {
+    "\/forms\/{formId}\/data\/{dataId}\/exports\/{exportId}\/pdf": {
       "get": {
         "tags": [
           "exports"
@@ -1113,7 +1004,7 @@
         "summary": "Export data (PDF)",
         "description": "Export one entry to the selected export to PDF.",
         "produces": [
-          "application/pdf"
+          "application\/pdf"
         ],
         "parameters": [
           {
@@ -1140,16 +1031,13 @@
         ],
         "responses": {
           "200": {
-            "description": "PDF created",
-            "schema": {
-              "type": "string"
-            }
+            "description": "PDF created"
           },
           "400": {
             "description": "Error"
           },
           "501": {
-            "description": "Form/Export/Id is not matching"
+            "description": "Form\/Export\/Id is not matching"
           }
         },
         "security": [
@@ -1161,16 +1049,16 @@
         ]
       }
     },
-    "/forms/{formId}/multiple_data/exports/{exportId}/pdf": {
+    "\/forms\/{formId}\/multiple_data\/exports\/{exportId}\/pdf": {
       "post": {
         "tags": [
           "exports"
         ],
-        "summary": "Export data (multiple / PDF)",
+        "summary": "Export data (multiple \/ PDF)",
         "description": "Export multiple entries to the selected export to PDF.",
         "produces": [
-          "application/pdf",
-          "application/zip"
+          "application\/pdf",
+          "application\/zip"
         ],
         "parameters": [
           {
@@ -1192,22 +1080,19 @@
             "name": "body",
             "description": "Data ids Parameters",
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "PDF created",
-            "schema": {
-              "type": "string"
-            }
+            "description": "PDF created"
           },
           "400": {
             "description": "Error"
           },
           "501": {
-            "description": "Form/Export/Id is not matching"
+            "description": "Form\/Export\/Id is not matching"
           }
         },
         "security": [
@@ -1219,7 +1104,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/multiple/csv": {
+    "\/forms\/{formId}\/data\/multiple\/csv": {
       "post": {
         "tags": [
           "exports"
@@ -1228,7 +1113,7 @@
         "description": "Get CSV data (multiple) of a form",
         "type": "stream",
         "produces": [
-          "text/csv"
+          "text\/csv"
         ],
         "parameters": [
           {
@@ -1243,7 +1128,7 @@
             "name": "body",
             "description": "Data ids Parameters",
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -1264,7 +1149,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/multiple/csv_custom": {
+    "\/forms\/{formId}\/data\/multiple\/csv_custom": {
       "post": {
         "tags": [
           "exports"
@@ -1273,7 +1158,7 @@
         "description": "Get custom CSV data (multiple) of a form",
         "type": "stream",
         "produces": [
-          "text/csv"
+          "text\/csv"
         ],
         "parameters": [
           {
@@ -1289,7 +1174,7 @@
             "description": "Data ids Parameters",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -1310,7 +1195,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/multiple/excel": {
+    "\/forms\/{formId}\/data\/multiple\/excel": {
       "post": {
         "tags": [
           "exports"
@@ -1319,7 +1204,7 @@
         "description": "Get Excel list data (multiple) of a form",
         "type": "stream",
         "produces": [
-          "application/vnd.ms-excel"
+          "application\/vnd.ms-excel"
         ],
         "parameters": [
           {
@@ -1335,7 +1220,7 @@
             "description": "Data ids Parameters",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -1356,7 +1241,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/multiple/excel_custom": {
+    "\/forms\/{formId}\/data\/multiple\/excel_custom": {
       "post": {
         "tags": [
           "exports"
@@ -1365,7 +1250,7 @@
         "description": "Get custom Excel list data (multiple) of a form",
         "type": "stream",
         "produces": [
-          "application/vnd.ms-excel"
+          "application\/vnd.ms-excel"
         ],
         "parameters": [
           {
@@ -1381,7 +1266,7 @@
             "description": "Data ids Parameters",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/DataIds"
+              "$ref": "#\/definitions\/DataIds"
             }
           }
         ],
@@ -1402,7 +1287,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}/medias/{mediaName}": {
+    "\/forms\/{formId}\/data\/{dataId}\/medias\/{mediaName}": {
       "get": {
         "tags": [
           "exports"
@@ -1411,9 +1296,9 @@
         "description": "Get one image of a form",
         "type": "stream",
         "produces": [
-          "image/jpeg",
-          "image/png",
-          "image/gif"
+          "image\/jpeg",
+          "image\/png",
+          "image\/gif"
         ],
         "parameters": [
           {
@@ -1455,7 +1340,7 @@
         ]
       }
     },
-    "/forms/{formId}/data/{dataId}/form_pictures/{mediaName}": {
+    "\/forms\/{formId}\/data\/{dataId}\/form_pictures\/{mediaName}": {
       "get": {
         "tags": [
           "exports"
@@ -1464,9 +1349,9 @@
         "description": "Get one fixed image of a form",
         "type": "stream",
         "produces": [
-          "image/jpeg",
-          "image/png",
-          "image/gif"
+          "image\/jpeg",
+          "image\/png",
+          "image\/gif"
         ],
         "parameters": [
           {
@@ -1508,7 +1393,7 @@
         ]
       }
     },
-    "/lists": {
+    "\/lists": {
       "get": {
         "tags": [
           "lists"
@@ -1516,13 +1401,13 @@
         "summary": "Get External Lists",
         "description": "Get External Lists",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
             "description": "Lists",
             "schema": {
-              "$ref": "#/definitions/ExtList"
+              "$ref": "#\/definitions\/ExtList"
             }
           },
           "400": {
@@ -1538,7 +1423,7 @@
         ]
       }
     },
-    "/lists/{listId}": {
+    "\/lists\/{listId}": {
       "get": {
         "tags": [
           "lists"
@@ -1546,7 +1431,7 @@
         "summary": "Get External List Definition",
         "description": "Get External List Definition",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1561,7 +1446,7 @@
           "200": {
             "description": "List definition",
             "schema": {
-              "$ref": "#/definitions/ExtListDetail"
+              "$ref": "#\/definitions\/ExtListDetail"
             }
           },
           "400": {
@@ -1583,7 +1468,7 @@
         "summary": "Update External List Definition",
         "description": "Update External List Definition",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1599,7 +1484,7 @@
             "description": "User Parameters",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ListPut"
+              "$ref": "#\/definitions\/ListPut"
             }
           }
         ],
@@ -1620,7 +1505,7 @@
         ]
       }
     },
-    "/lists/{listId}/complete": {
+    "\/lists\/{listId}\/complete": {
       "get": {
         "tags": [
           "lists"
@@ -1628,7 +1513,7 @@
         "summary": "Get External List Definition (Without taking in account filters)",
         "description": "Get External List Definition",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1643,7 +1528,7 @@
           "200": {
             "description": "Complete list definition",
             "schema": {
-              "$ref": "#/definitions/ExtListDetail"
+              "$ref": "#\/definitions\/ExtListDetail"
             }
           },
           "400": {
@@ -1659,7 +1544,7 @@
         ]
       }
     },
-    "/groups": {
+    "\/groups": {
       "get": {
         "tags": [
           "groups"
@@ -1667,7 +1552,7 @@
         "summary": "Get all groups",
         "description": "Get Groups Information",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
@@ -1686,7 +1571,7 @@
         ]
       }
     },
-    "/group": {
+    "\/group": {
       "post": {
         "tags": [
           "groups"
@@ -1694,7 +1579,7 @@
         "summary": "Create a new group",
         "description": "Use to a create group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1703,7 +1588,7 @@
             "required": true,
             "description": "Group Parameters",
             "schema": {
-              "$ref": "#/definitions/Group"
+              "$ref": "#\/definitions\/Group"
             }
           }
         ],
@@ -1711,7 +1596,7 @@
           "200": {
             "description": "Group created",
             "schema": {
-              "$ref": "#/definitions/GroupResponse"
+              "$ref": "#\/definitions\/GroupResponse"
             }
           },
           "400": {
@@ -1727,7 +1612,7 @@
         ]
       }
     },
-    "/group/{groupId}": {
+    "\/group\/{groupId}": {
       "get": {
         "tags": [
           "groups"
@@ -1747,7 +1632,7 @@
           "200": {
             "description": "Group",
             "schema": {
-              "$ref": "#/definitions/GroupComplete"
+              "$ref": "#\/definitions\/GroupComplete"
             }
           },
           "400": {
@@ -1769,7 +1654,7 @@
         "summary": "Update a group",
         "description": "Update existing group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1785,7 +1670,7 @@
             "required": true,
             "description": "Group Parameters",
             "schema": {
-              "$ref": "#/definitions/GroupModify"
+              "$ref": "#\/definitions\/GroupModify"
             }
           }
         ],
@@ -1812,7 +1697,7 @@
         "summary": "Delete a group",
         "description": "Delete existing group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1840,7 +1725,7 @@
         ]
       }
     },
-    "/group/{groupId}/users": {
+    "\/group\/{groupId}\/users": {
       "get": {
         "tags": [
           "groups"
@@ -1848,7 +1733,7 @@
         "summary": "Get all users of a specific group",
         "description": "Use to get all users of the requested group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1863,7 +1748,7 @@
           "200": {
             "description": "List of group users",
             "schema": {
-              "$ref": "#/definitions/GroupUser"
+              "$ref": "#\/definitions\/GroupUser"
             }
           },
           "400": {
@@ -1885,7 +1770,7 @@
         "summary": "Add several users into a group",
         "description": "Use to add several users into a group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1901,7 +1786,7 @@
             "description": "Users ids",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UserResponse"
+              "$ref": "#\/definitions\/UserResponse"
             }
           }
         ],
@@ -1909,7 +1794,7 @@
           "200": {
             "description": "Users added",
             "schema": {
-              "$ref": "#/definitions/GroupResponse"
+              "$ref": "#\/definitions\/GroupResponse"
             }
           },
           "400": {
@@ -1925,7 +1810,7 @@
         ]
       }
     },
-    "/group/{groupId}/leaders": {
+    "\/group\/{groupId}\/leaders": {
       "get": {
         "tags": [
           "groups"
@@ -1933,7 +1818,7 @@
         "summary": "Get all groups' leaders of a specific group",
         "description": "Use to get all groups' leaders of a specific group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1948,7 +1833,7 @@
           "200": {
             "description": "List of group leaders",
             "schema": {
-              "$ref": "#/definitions/GroupUser"
+              "$ref": "#\/definitions\/GroupUser"
             }
           },
           "400": {
@@ -1970,7 +1855,7 @@
         "summary": "Add several leaders into a group",
         "description": "Use to add several leaders into a group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -1986,7 +1871,7 @@
             "description": "Leaders ids",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UserResponse"
+              "$ref": "#\/definitions\/UserResponse"
             }
           }
         ],
@@ -1994,7 +1879,7 @@
           "200": {
             "description": "Leaders added",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#\/definitions\/User"
             }
           },
           "400": {
@@ -2010,7 +1895,7 @@
         ]
       }
     },
-    "/groups/ordered": {
+    "\/groups\/ordered": {
       "get": {
         "tags": [
           "groups"
@@ -2018,13 +1903,13 @@
         "summary": "Get all groups ordered",
         "description": "Use to get all groups ordered",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "responses": {
           "200": {
             "description": "List of groups ordered",
             "schema": {
-              "$ref": "#/definitions/Group"
+              "$ref": "#\/definitions\/Group"
             }
           },
           "400": {
@@ -2040,7 +1925,7 @@
         ]
       }
     },
-    "/group/{groupId}/user/{userId}": {
+    "\/group\/{groupId}\/user\/{userId}": {
       "post": {
         "tags": [
           "groups"
@@ -2048,7 +1933,7 @@
         "summary": "Add an user into a specific group",
         "description": "Add an user into a group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -2070,7 +1955,7 @@
           "200": {
             "description": "User added",
             "schema": {
-              "$ref": "#/definitions/GroupComplete"
+              "$ref": "#\/definitions\/GroupComplete"
             }
           },
           "400": {
@@ -2092,7 +1977,7 @@
         "summary": "Remove an user from a specific group",
         "description": "Remove an user from a specific group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -2114,7 +1999,7 @@
           "200": {
             "description": "User deleted",
             "schema": {
-              "$ref": "#/definitions/GroupComplete"
+              "$ref": "#\/definitions\/GroupComplete"
             }
           },
           "400": {
@@ -2130,7 +2015,7 @@
         ]
       }
     },
-    "/group/{groupId}/leader/{leaderId}": {
+    "\/group\/{groupId}\/leader\/{leaderId}": {
       "post": {
         "tags": [
           "groups"
@@ -2138,7 +2023,7 @@
         "summary": "Add a leader into a specific group",
         "description": "Add a leader into a specific group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -2160,7 +2045,7 @@
           "200": {
             "description": "Leader added",
             "schema": {
-              "$ref": "#/definitions/GroupComplete"
+              "$ref": "#\/definitions\/GroupComplete"
             }
           },
           "400": {
@@ -2182,7 +2067,7 @@
         "summary": "Remove a leader from a specific group",
         "description": "Remove a leader from a specific group",
         "produces": [
-          "application/json"
+          "application\/json"
         ],
         "parameters": [
           {
@@ -2204,7 +2089,7 @@
           "200": {
             "description": "Leader deleted",
             "schema": {
-              "$ref": "#/definitions/GroupComplete"
+              "$ref": "#\/definitions\/GroupComplete"
             }
           },
           "400": {
@@ -2244,31 +2129,6 @@
         },
         "data": {
           "type": "object"
-        }
-      }
-    },
-    "LoginCredential": {
-      "properties": {
-        "user": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "company": {
-          "type": "string"
-        }
-      }
-    },
-    "LoginCredentialResponse": {
-      "properties": {
-        "data": {
-          "type": "object",
-          "properties": {
-            "token": {
-              "type": "string"
-            }
-          }
         }
       }
     },
@@ -2469,13 +2329,13 @@
         },
         "filters": {
           "items": {
-            "$ref": "#/definitions/AdvancedFilterFilters"
+            "$ref": "#\/definitions\/AdvancedFilterFilters"
           },
           "type": "array"
         },
         "order": {
           "items": {
-            "$ref": "#/definitions/AdvancedFilterOrders"
+            "$ref": "#\/definitions\/AdvancedFilterOrders"
           },
           "type": "array"
         }
@@ -2515,14 +2375,11 @@
     },
     "Data": {
       "properties": {
-        "data": {
+        "Data": {
           "type": "object",
           "properties": {
             "id": {
               "type": "integer"
-            },
-            "record_number": {
-              "type": "integer",
             },
             "form_id": {
               "type": "integer"
@@ -2533,109 +2390,17 @@
             "create_time": {
               "type": "string"
             },
-            "update_time": {
-              "type": "string"
-            },
-            "update_user_id": {
-              "type": "string"
-            },
-            "update_user_name": {
-              "type": "string"
-            },
-            "hidtory": {
-              "type": "string"
-            },
-            "form_unique_id": {
-              "type": "string"
-            },
-            "origin_answer": {
-              "type": "string"
-            },
             "answer_time": {
-              "type": "string"
-            },
-            "user_name": {
-              "type": "string"
-            },
-            "last_name": {
-              "type": "string"
-            },
-            "first_name": {
-              "type": "string"
-            },
-            "phone": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "login": {
-              "type": "string"
-            },
-            "recipient_name": {
               "type": "string"
             },
             "fields": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/FieldValue"
+                "$ref": "#\/definitions\/FieldValue"
               }
             }
           }
         }
-      }
-    },
-    "Export" : {
-        "properties": {
-          "form_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "json": {
-            "type": "object",
-            "properties" : {
-                "file": {
-                  "type": "string"
-                },
-                "exportName": {
-                  "type": "string"
-                },
-                "showInvisible": {
-                  "type": "boolean"
-                },
-                "clickableImage": {
-                  "type": "boolean"
-                },
-                "is_pdf_default": {
-                  "type": "boolean"
-                }
-            }
-          },
-          "is_default": {
-            "type": "boolean"
-          },
-          "deleted": {
-            "type": "boolean"
-          },
-          "computedNames": {
-            "type": "object",
-            "properties" : {
-                "word": {
-                  "type": "string"
-                },
-                "pdf": {
-                  "type": "string"
-                }
-              }
-          },
-          "id": {
-            "type": "string"
-          }
       }
     },
     "FieldValue": {
@@ -2671,14 +2436,14 @@
           "format": "int64"
         },
         "fields": {
-          "$ref": "#/definitions/FieldPush"
+          "$ref": "#\/definitions\/FieldPush"
         }
       }
     },
     "FieldPush": {
       "properties": {
         "field_id": {
-          "$ref": "#/definitions/FieldPushValue"
+          "$ref": "#\/definitions\/FieldPushValue"
         }
       }
     },
@@ -2817,6 +2582,6 @@
   },
   "externalDocs": {
     "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
+    "url": "http:\/\/swagger.io"
   }
 }

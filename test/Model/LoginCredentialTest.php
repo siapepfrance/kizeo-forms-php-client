@@ -1,6 +1,6 @@
 <?php
 /**
- * DataIdsTest
+ * LoginCredentialTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace SiapepFrance\KizeoForms;
 
 /**
- * DataIdsTest Class Doc Comment
+ * LoginCredentialTest Class Doc Comment
  *
  * @category    Class
- * @description DataIds
+ * @description LoginCredential
  * @package     SiapepFrance\KizeoForms
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DataIdsTest extends \PHPUnit_Framework_TestCase
+class LoginCredentialTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,30 @@ class DataIdsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "DataIds"
+     * Test "LoginCredential"
      */
-    public function testDataIds()
+    public function testLoginCredential()
     {
     }
 
     /**
-     * Test attribute "dataIds"
+     * Test attribute "user"
      */
-    public function testPropertyDataIds()
+    public function testPropertyUser()
+    {
+    }
+
+    /**
+     * Test attribute "password"
+     */
+    public function testPropertyPassword()
+    {
+    }
+
+    /**
+     * Test attribute "company"
+     */
+    public function testPropertyCompany()
     {
     }
 }

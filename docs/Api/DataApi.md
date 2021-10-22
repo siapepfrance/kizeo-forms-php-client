@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**formsPushInboxGet**](DataApi.md#formsPushInboxGet) | **GET** /forms/push/inbox | Receive new pushed data
 
 # **formsFormIdDataAdvancedPost**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdDataAdvancedPost($body, $formId)
+> object formsFormIdDataAdvancedPost($body, $formId)
 
 Get List of filtered data of a form (with advanced filtering options)
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdDataAllGet**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdDataAllGet($formId)
+> object formsFormIdDataAllGet($formId)
 
 Get the list of all data of a form
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdDataGet**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdDataGet($formId)
+> object formsFormIdDataGet($formId)
 
 Get the list of all data of a form (not read)
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdDataReadnewGet**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdDataReadnewGet($formId)
+> object formsFormIdDataReadnewGet($formId)
 
 Get content of unread data
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdDataSearchPost**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdDataSearchPost($body, $formId)
+> object formsFormIdDataSearchPost($body, $formId)
 
 Get List of filtered data of a form
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdMarkasreadPost**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdMarkasreadPost($body, $formId)
+> object formsFormIdMarkasreadPost($body, $formId)
 
 Set list of data of a form to read
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdMarkasunreadPost**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdMarkasunreadPost($body, $formId)
+> object formsFormIdMarkasunreadPost($body, $formId)
 
 Set list of data of form to unread
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+**object**
 
 ### Authorization
 

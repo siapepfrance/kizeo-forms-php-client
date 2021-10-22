@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**formsFormIdMultipleDataExportsExportIdPdfPost**](ExportsApi.md#formsFormIdMultipleDataExportsExportIdPdfPost) | **POST** /forms/{formId}/multiple_data/exports/{exportId}/pdf | Export data (multiple / PDF)
 
 # **formsFormIdDataDataIdExportsExportIdGet**
-> formsFormIdDataDataIdExportsExportIdGet($formId, $dataId, $exportId)
+> string formsFormIdDataDataIdExportsExportIdGet($formId, $dataId, $exportId)
 
 Export data
 
@@ -43,7 +43,8 @@ $dataId = 56; // int | ID of the data
 $exportId = 56; // int | ID of requested export model
 
 try {
-    $apiInstance->formsFormIdDataDataIdExportsExportIdGet($formId, $dataId, $exportId);
+    $result = $apiInstance->formsFormIdDataDataIdExportsExportIdGet($formId, $dataId, $exportId);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->formsFormIdDataDataIdExportsExportIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**string**
 
 ### Authorization
 
@@ -69,12 +70,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-excel
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdDataDataIdExportsExportIdPdfGet**
-> formsFormIdDataDataIdExportsExportIdPdfGet($formId, $dataId, $exportId)
+> string formsFormIdDataDataIdExportsExportIdPdfGet($formId, $dataId, $exportId)
 
 Export data (PDF)
 
@@ -100,7 +101,8 @@ $dataId = 56; // int | ID of the data
 $exportId = 56; // int | ID of requested export model
 
 try {
-    $apiInstance->formsFormIdDataDataIdExportsExportIdPdfGet($formId, $dataId, $exportId);
+    $result = $apiInstance->formsFormIdDataDataIdExportsExportIdPdfGet($formId, $dataId, $exportId);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->formsFormIdDataDataIdExportsExportIdPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -117,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**string**
 
 ### Authorization
 
@@ -126,7 +128,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/pdf
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -520,7 +522,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdExportsGet**
-> formsFormIdExportsGet($formId)
+> object formsFormIdExportsGet($formId)
 
 Get list of Word and Excel exports
 
@@ -544,7 +546,8 @@ $apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
 $formId = 56; // int | ID of the form
 
 try {
-    $apiInstance->formsFormIdExportsGet($formId);
+    $result = $apiInstance->formsFormIdExportsGet($formId);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->formsFormIdExportsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -559,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -568,12 +571,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdMultipleDataExportsExportIdPdfPost**
-> formsFormIdMultipleDataExportsExportIdPdfPost($formId, $exportId, $body)
+> string formsFormIdMultipleDataExportsExportIdPdfPost($formId, $exportId, $body)
 
 Export data (multiple / PDF)
 
@@ -599,7 +602,8 @@ $exportId = 56; // int | ID of requested export model
 $body = new \SiapepFrance\KizeoForms\Model\DataIds(); // \SiapepFrance\KizeoForms\Model\DataIds | Data ids Parameters
 
 try {
-    $apiInstance->formsFormIdMultipleDataExportsExportIdPdfPost($formId, $exportId, $body);
+    $result = $apiInstance->formsFormIdMultipleDataExportsExportIdPdfPost($formId, $exportId, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->formsFormIdMultipleDataExportsExportIdPdfPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -616,7 +620,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**string**
 
 ### Authorization
 
@@ -625,7 +629,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: */*
- - **Accept**: Not defined
+ - **Accept**: application/pdf, application/zip
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

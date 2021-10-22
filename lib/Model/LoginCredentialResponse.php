@@ -1,6 +1,6 @@
 <?php
 /**
- * Data
+ * LoginCredentialResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \SiapepFrance\KizeoForms\ObjectSerializer;
 
 /**
- * Data Class Doc Comment
+ * LoginCredentialResponse Class Doc Comment
  *
  * @category Class
  * @package  SiapepFrance\KizeoForms
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Data implements ModelInterface, ArrayAccess
+class LoginCredentialResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Data implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Data';
+    protected static $swaggerModelName = 'LoginCredentialResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

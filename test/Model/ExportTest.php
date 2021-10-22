@@ -1,6 +1,6 @@
 <?php
 /**
- * DataIdsTest
+ * ExportTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace SiapepFrance\KizeoForms;
 
 /**
- * DataIdsTest Class Doc Comment
+ * ExportTest Class Doc Comment
  *
  * @category    Class
- * @description DataIds
+ * @description Export
  * @package     SiapepFrance\KizeoForms
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DataIdsTest extends \PHPUnit_Framework_TestCase
+class ExportTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,65 @@ class DataIdsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "DataIds"
+     * Test "Export"
      */
-    public function testDataIds()
+    public function testExport()
     {
     }
 
     /**
-     * Test attribute "dataIds"
+     * Test attribute "formId"
      */
-    public function testPropertyDataIds()
+    public function testPropertyFormId()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "json"
+     */
+    public function testPropertyJson()
+    {
+    }
+
+    /**
+     * Test attribute "isDefault"
+     */
+    public function testPropertyIsDefault()
+    {
+    }
+
+    /**
+     * Test attribute "deleted"
+     */
+    public function testPropertyDeleted()
+    {
+    }
+
+    /**
+     * Test attribute "computedNames"
+     */
+    public function testPropertyComputedNames()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
     }
 }
