@@ -32,7 +32,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -90,7 +90,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -148,7 +148,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -205,7 +205,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -262,7 +262,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -317,7 +317,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -372,7 +372,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -427,7 +427,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -482,7 +482,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -537,7 +537,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -591,7 +591,7 @@ $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new SiapepFrance\KizeoForms\Api\ExportsApi(
+$apiInstance = new \SiapepFrance\KizeoForms\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
