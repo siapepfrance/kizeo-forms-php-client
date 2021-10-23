@@ -91,6 +91,16 @@ class DataApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for formsFormIdDataDataIdDeleteDelete
+     *
+     * Delete a data.
+     *
+     */
+    public function testFormsFormIdDataDataIdDeleteDelete()
+    {
+    }
+
+    /**
      * Test case for formsFormIdDataDataIdGet
      *
      * Get data of a form.

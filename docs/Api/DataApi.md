@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**formsFormIdDataAdvancedPost**](DataApi.md#formsFormIdDataAdvancedPost) | **POST** /forms/{formId}/data/advanced | Get List of filtered data of a form (with advanced filtering options)
 [**formsFormIdDataAllGet**](DataApi.md#formsFormIdDataAllGet) | **GET** /forms/{formId}/data/all | Get the list of all data of a form
+[**formsFormIdDataDataIdDeleteDelete**](DataApi.md#formsFormIdDataDataIdDeleteDelete) | **DELETE** /forms/{formId}/data/{dataId}/delete | Delete a data
 [**formsFormIdDataDataIdGet**](DataApi.md#formsFormIdDataDataIdGet) | **GET** /forms/{formId}/data/{dataId} | Get data of a form
 [**formsFormIdDataGet**](DataApi.md#formsFormIdDataGet) | **GET** /forms/{formId}/data | Get the list of all data of a form (not read)
 [**formsFormIdDataReadnewGet**](DataApi.md#formsFormIdDataReadnewGet) | **GET** /forms/{formId}/data/readnew | Get content of unread data
@@ -28,9 +29,9 @@ Get the list of filtered data of a form (with advanced filtering options), or of
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -84,9 +85,9 @@ This function provides you all data of a form
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -126,6 +127,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **formsFormIdDataDataIdDeleteDelete**
+> formsFormIdDataDataIdDeleteDelete($formId, $dataId)
+
+Delete a data
+
+Delete existing data
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: authentication
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$formId = 56; // int | ID of the form
+$dataId = 56; // int | ID of the data
+
+try {
+    $apiInstance->formsFormIdDataDataIdDeleteDelete($formId, $dataId);
+} catch (Exception $e) {
+    echo 'Exception when calling DataApi->formsFormIdDataDataIdDeleteDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **formId** | **int**| ID of the form |
+ **dataId** | **int**| ID of the data |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authentication](../../README.md#authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **formsFormIdDataDataIdGet**
 > \SiapepFrance\KizeoForms\Model\Data formsFormIdDataDataIdGet($formId, $dataId)
 
@@ -138,9 +194,9 @@ Get data of a form
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -194,9 +250,9 @@ This function provides you all data of a form (not read)
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -248,9 +304,9 @@ Get the content of all unread data
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -302,9 +358,9 @@ Get the list of filtered data of a form, or of all forms if formId is set to 'al
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -358,9 +414,9 @@ Set list of data of a form to read
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -414,9 +470,9 @@ Set list of data of form to unread
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -470,9 +526,9 @@ Send push with data
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -528,9 +584,9 @@ Send push with data
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -584,9 +640,9 @@ Receive all new pushed data
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: authentication
-$config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = \SiapepFrance\KizeoForms\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new SiapepFrance\KizeoForms\Api\DataApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
