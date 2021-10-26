@@ -930,7 +930,7 @@
           "200": {
             "description": "Push sent successfully",
             "schema": {
-              "$ref": "#/definitions/DataMin"
+              "$ref": "#/definitions/DataPushResponse"
             }
           },
           "400": {
@@ -2713,6 +2713,21 @@
               "items": {
                 "$ref": "#/definitions/FieldValue"
               }
+            }
+          }
+        }
+      }
+    },
+    "DataPushResponse": {
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "data_id": {
+              "type": "integer"
             }
           }
         }
