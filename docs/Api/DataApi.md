@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **formsFormIdPushPost**
-> \SiapepFrance\KizeoForms\Model\DataMin formsFormIdPushPost($body, $formId)
+> \SiapepFrance\KizeoForms\Model\DataPushResponse formsFormIdPushPost($body, $formId)
 
 Send push with data
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SiapepFrance\KizeoForms\Model\DataMin**](../Model/DataMin.md)
+[**\SiapepFrance\KizeoForms\Model\DataPushResponse**](../Model/DataPushResponse.md)
 
 ### Authorization
 

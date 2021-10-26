@@ -2856,7 +2856,7 @@ class DataApi
      *
      * @throws \SiapepFrance\KizeoForms\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SiapepFrance\KizeoForms\Model\DataMin
+     * @return \SiapepFrance\KizeoForms\Model\DataPushResponse
      */
     public function formsFormIdPushPost($body, $formId)
     {
@@ -2874,11 +2874,11 @@ class DataApi
      *
      * @throws \SiapepFrance\KizeoForms\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SiapepFrance\KizeoForms\Model\DataMin, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SiapepFrance\KizeoForms\Model\DataPushResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function formsFormIdPushPostWithHttpInfo($body, $formId)
     {
-        $returnType = '\SiapepFrance\KizeoForms\Model\DataMin';
+        $returnType = '\SiapepFrance\KizeoForms\Model\DataPushResponse';
         $request = $this->formsFormIdPushPostRequest($body, $formId);
 
         try {
@@ -2930,7 +2930,7 @@ class DataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SiapepFrance\KizeoForms\Model\DataMin',
+                        '\SiapepFrance\KizeoForms\Model\DataPushResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2974,7 +2974,7 @@ class DataApi
      */
     public function formsFormIdPushPostAsyncWithHttpInfo($body, $formId)
     {
-        $returnType = '\SiapepFrance\KizeoForms\Model\DataMin';
+        $returnType = '\SiapepFrance\KizeoForms\Model\DataPushResponse';
         $request = $this->formsFormIdPushPostRequest($body, $formId);
 
         return $this->client
