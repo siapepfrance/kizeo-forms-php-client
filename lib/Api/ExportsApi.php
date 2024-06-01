@@ -975,11 +975,11 @@ class ExportsApi
      *
      * @throws \SiapepFrance\KizeoForms\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function formsFormIdDataDataIdMediasMediaNameGet($formId, $dataId, $mediaName)
     {
-        $this->formsFormIdDataDataIdMediasMediaNameGetWithHttpInfo($formId, $dataId, $mediaName);
+        return $this->formsFormIdDataDataIdMediasMediaNameGetWithHttpInfo($formId, $dataId, $mediaName);
     }
 
     /**
@@ -993,11 +993,11 @@ class ExportsApi
      *
      * @throws \SiapepFrance\KizeoForms\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function formsFormIdDataDataIdMediasMediaNameGetWithHttpInfo($formId, $dataId, $mediaName)
     {
-        $returnType = '';
+        $returnType = 'string';
         $request = $this->formsFormIdDataDataIdMediasMediaNameGetRequest($formId, $dataId, $mediaName);
 
         try {
@@ -1028,10 +1028,32 @@ class ExportsApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
